@@ -80,9 +80,9 @@ var languageProcessingDatabase = {
                     var low = kelvinToFarenheit(weatherObject.main.temp_min);
 
                     speechSynthesisEngine.speakResultOfIntent([
-                        "The high will be " + high.round() + " degrees, and the low will be " + low.round() + " degrees.",
-                        "The high today is " + high.round() + " degrees farenheit, and the low is " + low.round() + " degrees.",
-                        "Today's high will be " + high.round() + " degrees, and the low will be " + low.round() + " degrees."
+                        "The high will be " + Math.round(high) + " degrees, and the low will be " + Math.round(low) + " degrees.",
+                        "The high today is " + Math.round(high) + " degrees farenheit, and the low is " + Math.round(low) + " degrees.",
+                        "Today's high will be " + Math.round(high) + " degrees, and the low will be " + Math.round(low) + " degrees."
                     ]);
 
                 });
@@ -101,20 +101,21 @@ var languageProcessingDatabase = {
                     var low = kelvinToFarenheit(weatherObject.main.temp_min);
 
                     //Only speak the feels like temperature if it's different from the actual temperature
-                    if (currentTemperature.round() == feelsLikeTemperature.round()) {
+                    if (Math.round(currentTemperature) == Math.round(feelsLikeTemperature)) {
 
                         speechSynthesisEngine.speakResultOfIntent([
-                            "It is currently " + currentTemperature.round() + " degrees.",
-                            "The temperature is currently " + currentTemperature.round() + " degrees &DA",
-                            "The current temperature in " + weatherObject.name + " is " + currentTemperature.round() + " degrees &DA."
+                            "It is currently " + Math.round(currentTemperature) + " degrees.",
+                            "The temperature is currently " + Math.round(currentTemperature) + " degrees &DA",
+                            "The current temperature in " + weatherObject.name + " is " + Math.round(currentTemperature) + " degrees &DA."
                         ]);
 
                     } else {
 
                         speechSynthesisEngine.speakResultOfIntent([
-                            "It is currently " + currentTemperature.round() + " degrees, but it feels like " + feelsLikeTemperature.round() + " degrees &DA",
-                            "The temperature is currently " + currentTemperature.round() + " degrees, but it feels like " + feelsLikeTemperature.round(),
-                            "The current temperature in " + weatherObject.name + " is " + currentTemperature.round() + " degrees, but it feels like " + feelsLikeTemperature.round(),  
+                            "It is currently " + Math.round(currentTemperature) + " degrees, but it feels like " + Math.round(feelsLikeTemperature) + " degrees &DA",
+                            "The temperature is currently " + Math.round(currentTemperature) + " degrees, but it feels like " + Math.round(feelsLikeTemperature),
+                            "The current temperature in " + weatherObject.name + " is " + Math.round(currentTemperature) + " degrees, but it feels like " + Math.round(feelsLikeTemperature),  
+                            "The current temperature in " + weatherObject.name + " is " + Math.round(currentTemperature) + " degrees, but it feels like " + Math.round(feelsLikeTemperature),  
                         ]);
 
                     }
