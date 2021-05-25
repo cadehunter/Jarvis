@@ -140,6 +140,7 @@ function setPreferredSpeechSynthesisVoice() {
     var preferredVoiceURIs = [
         "com.apple.speech.synthesis.voice.oliver.premium",
         "com.apple.speech.synthesis.voice.oliver",
+        "Microsoft Mia Online (Natural) - English (United Kingdom)",
         "com.apple.speech.synthesis.voice.Alex.premium",
         "com.apple.speech.synthesis.voice.Alex",
         "Alex"
