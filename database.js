@@ -130,7 +130,7 @@ var languageProcessingDatabase = {
 
                 weatherInterface.getWeather(function (weatherObject) {
 
-                    var speed = (weatherObject.wind.speed * 2.237);
+                    var speed = Math.round(weatherObject.wind.speed * 2.237);
                     var angle = weatherObject.wind.deg;
 
                     //Convert the meteorological angle to a compass direction
