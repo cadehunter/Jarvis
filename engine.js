@@ -133,33 +133,39 @@ var speechSynthesisEngine = {
 
 }
 
-//Get window.speechSynthesis voices and choose the best one.
-var speechSynthesisVoices = speechSynthesis.getVoices();
-var preferredVoiceURIs = [
-    "com.apple.speech.synthesis.voice.oliver.premium",
-    "com.apple.speech.synthesis.voice.oliver",
-    "com.apple.speech.synthesis.voice.Alex.premium",
-    "com.apple.speech.synthesis.voice.Alex",
-    "Alex"
-];
+function setPreferredSpeechSynthesisVoice() {
+    
+    //Get window.speechSynthesis voices and choose the best one.
+    var speechSynthesisVoices = speechSynthesis.getVoices();
+    var preferredVoiceURIs = [
+        "com.apple.speech.synthesis.voice.oliver.premium",
+        "com.apple.speech.synthesis.voice.oliver",
+        "com.apple.speech.synthesis.voice.Alex.premium",
+        "com.apple.speech.synthesis.voice.Alex",
+        "Alex"
+    ];
 
-for (var i = 0; i < preferredVoiceURIs.length; i++) {
-    for (var ii = 0; ii < speechSynthesisVoices.length; ii++) {
+    for (var i = 0; i < preferredVoiceURIs.length; i++) {
+        for (var ii = 0; ii < speechSynthesisVoices.length; ii++) {
 
-        if (speechSynthesisVoices[ii].voiceURI == preferredVoiceURIs[i]) {
+            if (speechSynthesisVoices[ii].voiceURI == preferredVoiceURIs[i]) {
 
-            speechSynthesisEngine.preferredVoiceURI = speechSynthesisVoices[ii];
-            break;
+                speechSynthesisEngine.preferredVoiceURI = speechSynthesisVoices[ii];
+                break;
+
+            }
 
         }
 
+        //If the interior loop resulted in a match, we don't need to look for any more voices.
+        if (speechSynthesisEngine.preferredVoiceURI) {
+            break;
+        }
     }
-
-    //If the interior loop resulted in a match, we don't need to look for any more voices.
-    if (speechSynthesisEngine.preferredVoiceURI) {
-        break;
-    }
+    
 }
+speechSynthesis.addEventListener("voiceschanged", setPreferredSpeechSynthesisVoice);
+setPreferredSpeechSynthesisVoice();
 
 setLoadingStatus("Initializing Speech Recognition Engine...");
 
