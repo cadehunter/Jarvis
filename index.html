@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+
+    <title>JARVIS</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="devtools-detect.js"></script>
+
+</head>
+
+<body>
+
+    <div class="loadingScreen">
+
+        <div class="alternateBackground centered">
+            <h1>Loading</h1>
+            <p>Loading utilities...</p>
+        </div>
+
+    </div>
+
+    <div class="contentScreen">
+
+        <h1>Jarvis</h1>
+        <h2>Just Another Rather Very Intelligent System</h2>
+        <p>Natural language processing interface</p>
+
+    </div>
+
+    <script src="utilities.js"></script>
+    <script src="database.js"></script>
+    <script src="engine.js"></script>
+    <script src="UI.js"></script>
+    <script src="onload.js"></script>
+
+    <script>
+        //Once we reach this point, the page has loaded all scripts, so we can finish the loading process and show contentScreen.
+        setLoadingStatus("Showing Content Screen...");
+        showContentScreen();
+    </script>
+
+</body>
+
+</html>

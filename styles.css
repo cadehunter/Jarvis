@@ -1,0 +1,73 @@
+/*Variable definitions*/
+:root {
+    
+    --primary-background-color: #000000;
+    --secondary-background-color: #233347;
+    --primary-foreground-color: #05BFFF;
+    --secondary-foreground-color: #436F9E;
+    
+}
+
+/*Arame font definition*/
+@font-face {
+    
+    font-family: Arame;
+    src: url(Arame-Regular.otf);
+    font-weight: normal;
+    
+}
+
+@font-face {
+    
+    font-family: Arame;
+    src: url(Arame-Bold.otf);
+    font-weight: bold;
+    
+}
+
+body {
+    
+    background: var(--primary-background-color);
+    color: var(--primary-foreground-color);
+    font-family: Arame, monospace;
+    font-weight: normal;
+    
+}
+
+h1, h2, h3, h4, h5, p {
+    
+    margin: 10px;
+    
+}
+
+.hidden {
+    display: none;
+}
+
+.alternateBackground {
+    
+    background: var(--secondary-background-color);
+    
+}
+
+.centered {
+    
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    
+}
+
+.title {
+    
+    font-size: 18px;
+    
+}
+
+.loadingScreen div {
+    
+    text-align: center;
+    padding: 20px;
+    
+}
