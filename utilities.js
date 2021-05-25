@@ -75,7 +75,7 @@ function getOpenWeatherLocation(callback) {
 
             }
         };
-        request.open("GET", "http://api.openweathermap.org/geo/1.0/reverse?lat=" + locationObject.coords.latitude + "&lon=" + locationObject.coords.longitude + "&limit=" + 3 + "&appid=" + weatherInterface.key, true);
+        request.open("GET", "https://api.openweathermap.org/geo/1.0/reverse?lat=" + locationObject.coords.latitude + "&lon=" + locationObject.coords.longitude + "&limit=" + 3 + "&appid=" + weatherInterface.key, true);
         request.send();
 
     });
