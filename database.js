@@ -222,11 +222,9 @@ var languageProcessingDatabase = {
                         case "mist":
                             condition = "misty";
                             break;
-                        
-                        
                     }
 
-                    if (sentenceStructure == "are") {
+                    if (sentenceStructure == "is") {
                         
                         speechSynthesisEngine.speakResultOfIntent([
                             "It is currently " + condition + " &DA",
