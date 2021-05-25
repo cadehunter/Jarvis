@@ -22,7 +22,7 @@ var weatherInterface = {
 
     key: '0d52dcde31467563956e1aba2da10ab9',
 
-    internalGetWeather: function (cityID, callback) {
+    getWeather: function (callback) {
 
         //Get the user's Open Weather API location.
         getOpenWeatherLocation(function (locationObject) {
@@ -31,7 +31,7 @@ var weatherInterface = {
             request.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {
 
-                    console.log(JSON.parse(this.responseText));
+                    callback(JSON.parse(this.responseText));
 
                 }
             };
@@ -81,6 +81,12 @@ function getOpenWeatherLocation(callback) {
     });
 
 }
+
+function kelvinToFarenheit(kelvin) {
+    return ((kelvin - 273.15) * (9/5) + 32)
+}
+
+
 
 //Deploy countermeasures if the developer tools open in order to prevent the page from being modified or hacked.
 function developerToolsOpen() {
