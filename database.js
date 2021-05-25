@@ -114,7 +114,7 @@ var languageProcessingDatabase = {
                         speechSynthesisEngine.speakResultOfIntent([
                             "It is currently " + currentTemperature.round() + " degrees, but it feels like " + feelsLikeTemperature.round() + " degrees &DA",
                             "The temperature is currently " + currentTemperature.round() + " degrees, but it feels like " + feelsLikeTemperature.round(),
-                            "The current temperature in " + weatherObject.name + " is " + currentTemperature.round() + " degrees, but it feels like " + feelsLikeTemperature.round();
+                            "The current temperature in " + weatherObject.name + " is " + currentTemperature.round() + " degrees, but it feels like " + feelsLikeTemperature.round(),  
                         ]);
 
                     }
