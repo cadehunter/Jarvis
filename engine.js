@@ -180,6 +180,11 @@ var speechRecognitionEngine = {
         recognitionObject.onstart = function () {
             console.log("Voice recognition active.");
         };
+        
+        recognitionObject.onend = function () {
+            console.log("Voice recognition aborted.");
+            speechRecognitionEngine.startRecognition();
+        }
 
         recognitionObject.onresult = function (event) {
             var transcript = event.results[0][0].transcript;
