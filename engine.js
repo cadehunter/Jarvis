@@ -165,7 +165,7 @@ function setPreferredSpeechSynthesisVoice() {
     }
     
 }
-speechSynthesis.addEventListener("voiceschanged", setPreferredSpeechSynthesisVoice);
+if (speechSynthesis.addEventListener) speechSynthesis.addEventListener("voiceschanged", setPreferredSpeechSynthesisVoice);
 setPreferredSpeechSynthesisVoice();
 
 setLoadingStatus("Initializing Speech Recognition Engine...");
