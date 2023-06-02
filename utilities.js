@@ -1,3 +1,5 @@
+var DateTime = luxon.DateTime;
+
 function setLoadingStatus(loadingStatus) {
 
     document.querySelector(".loadingScreen div p").textContent = loadingStatus;

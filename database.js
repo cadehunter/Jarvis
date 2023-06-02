@@ -4,6 +4,35 @@ var languageProcessingDatabase = {
 
     dictionary: {
 
+        age: {
+            input: [" age ", " old ", " young "],
+            output: function () {
+                
+                var creationDate = DateTime.fromObject({
+                    year: 2021,
+                    month: 5,
+                    day: 17,
+                    zone: "MDT"
+                });
+                
+                var age = creationDate.diffNow(["years", "months", "weeks"]).toObject();
+                
+                var ageString;
+                if (age.months > 0) {
+                    ageString = (age.weeks + " weeks");
+                } else if (age.years > 0) {
+                    ageString = (age.months + " months")
+                } else {
+                    ageString = (age.years + " years")
+                }
+                
+                speechSynthesisEngine.speakResultOfIntent([
+                    "I am " + ageString + " old &DA"
+                ])
+                
+            }
+        },
+        
         wellnessInquiry: {
             input: [" how do you do ", " fine how are you ", " how are you come on ", " how are you ", " are you ", " have you been ", " are you doing "],
             output: function (outputEvent) {
@@ -70,6 +99,7 @@ var languageProcessingDatabase = {
                 speechSynthesisEngine.speakResultOfIntent(["Hello &DA", "Hello there &DA", "Welcome back &DA"])
             }
         },
+        
         weatherHighLow: {
             input: [" high ", " low "],
             output: function () {

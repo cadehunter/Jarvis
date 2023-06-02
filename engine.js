@@ -183,7 +183,7 @@ var speechRecognitionEngine = {
         
         recognitionObject.onend = function () {
             console.log("Voice recognition aborted.");
-            speechRecognitionEngine.startRecognition();
+            setTimeout(speechRecognitionEngine.startRecognition, 50);
         }
 
         recognitionObject.onresult = function (event) {
